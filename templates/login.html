@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+{% if messages %}
+    {% for message in messages%}
+        <p>{{message}}</p>
+    {% endfor %}
+{% endif %}
+
+<h1>Login</h1>
+<form action="" method="post">
+  {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" id="name"><br>
+    <label>Password</label>
+    <input type="password" name="password" id="pass"><br>
+    <input type="submit" onclick="Login()">
+</form>
+
+<script src="{% static 'js/newJs.js' %}"></script>
+</body>
+
+{% endblock %}
